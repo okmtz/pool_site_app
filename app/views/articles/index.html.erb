@@ -5,7 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th>Url</th>
+      <th>Title</th>
+      <th>Favicon</th>
+      <th>description</th>
+      <th>Image</th>
       <th>Check</th>
       <th>Comment</th>
       <th colspan="3"></th>
@@ -15,7 +18,11 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= article.url %></td>
+        <% article.url_contents.each do |url_content| %>
+          <td><%= url_content.title %></td>
+          <td><%= url_content.description %></td>
+          <td><%= image_tag  "#{url_content.image}", class: "article_image" %></td>
+        <% end %>
         <td><%= article.check %></td>
         <td><%= article.comment %></td>
         <td><%= link_to 'Show', article %></td>
