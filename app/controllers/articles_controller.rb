@@ -25,22 +25,14 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
-    article = Article.new(article_params)
-    Article.transaction do 
-      article.save!
-      UrlContent.create(article)
-    end
+    Article.create_with_url_content(article_params)
     redirect_to articles_path
   end
 
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
-    Article.transaction do
-      @article.update!(article_params)
-      break unless @article.saved_change_to_url?
-      UrlContent.update(@article)
-    end
+    Article.update_with_url_content(article_params, @article)
     redirect_to articles_path
   end
 
