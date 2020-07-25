@@ -28,6 +28,7 @@ class UrlContent < ApplicationRecord
     def url_content_params(article)
       url_content = LinkThumbnailer.generate(article.url)
       title = url_content.title ? url_content.title : ''
+      # faviconがimageタグで表示できない
       favicon = url_content.favicon ? url_content.favicon : ''
       description = url_content.description ? url_content.description : ''
       image = url_content.images.first ? url_content.images.first.src.to_s : '' 
