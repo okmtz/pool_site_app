@@ -102,6 +102,7 @@ GEM
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
     json (2.3.1)
+    line-bot-api (1.14.1)
     link_thumbnailer (3.3.2)
       activesupport (>= 3.0)
       image_info (>= 1.0)
@@ -263,6 +264,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   devise
   jbuilder (~> 2.7)
+  line-bot-api
   link_thumbnailer
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
