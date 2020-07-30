@@ -1,7 +1,7 @@
 class CreateArticles < ActiveRecord::Migration[6.0]
   def change
     create_table :articles do |t|
-      t.string :url
+      t.string :url, null: false
       t.integer :check
       t.string :comment
 
