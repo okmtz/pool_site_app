@@ -40,9 +40,12 @@ class LinebotsController < ApplicationController
       case event['message']['type']
       when 'text'
         if event['message']['text'].start_with?("https://")
+          user_id = 1
+          url = event['message']['text']
+          Article.create_with_url_content({user_id: user_id, url: url})
           {
             "type": "text",
-            "text": '成功です'
+            "text": '記事を登録しました'
           }
         else
           {
