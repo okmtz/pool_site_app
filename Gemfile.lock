@@ -85,6 +85,10 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.9.0)
     ethon (0.12.0)
       ffi (>= 1.3.0)
@@ -102,6 +106,7 @@ GEM
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
     json (2.3.1)
+    line-bot-api (1.14.1)
     link_thumbnailer (3.3.2)
       activesupport (>= 3.0)
       image_info (>= 1.0)
@@ -262,7 +267,9 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise
+  dotenv-rails
   jbuilder (~> 2.7)
+  line-bot-api
   link_thumbnailer
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
