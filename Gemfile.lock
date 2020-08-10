@@ -85,6 +85,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    doorkeeper (5.4.0)
+      railties (>= 5)
     dotenv (2.7.6)
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
@@ -92,6 +94,8 @@ GEM
     erubi (1.9.0)
     ethon (0.12.0)
       ffi (>= 1.3.0)
+    faraday (1.0.1)
+      multipart-post (>= 1.2, < 3)
     ffi (1.13.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -106,6 +110,7 @@ GEM
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
     json (2.3.1)
+    jwt (2.2.1)
     line-bot-api (1.14.1)
     link_thumbnailer (3.3.2)
       activesupport (>= 3.0)
@@ -131,12 +136,21 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.14.1)
     msgpack (1.3.3)
+    multi_json (1.15.0)
+    multi_xml (0.6.0)
+    multipart-post (2.1.1)
     net-http-persistent (4.0.0)
       connection_pool (~> 2.2)
     net_http_timeout_errors (0.3.5)
     nio4r (2.5.2)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
+    oauth2 (1.4.4)
+      faraday (>= 0.8, < 2.0)
+      jwt (>= 1.0, < 3.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (>= 1.2, < 3)
     oga (3.2)
       ast
       ruby-ll (~> 2.1)
@@ -267,11 +281,13 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise
+  doorkeeper
   dotenv-rails
   jbuilder (~> 2.7)
   line-bot-api
   link_thumbnailer
   listen (~> 3.2)
+  oauth2
   pg (>= 0.18, < 2.0)
   pry-byebug
   pry-rails
