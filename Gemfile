@@ -31,6 +31,8 @@ gem 'devise'
 gem 'link_thumbnailer'
 gem 'world-flags'
 gem 'line-bot-api'
+gem 'doorkeeper'
+gem 'oauth2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
