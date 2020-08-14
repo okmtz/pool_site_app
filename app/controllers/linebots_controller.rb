@@ -23,10 +23,7 @@ class LinebotsController < ApplicationController
   end
 
   def client
-    @client ||= Line::Bot::Client.new do |config|
-      config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
-      config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
-    end
+    @client ||= LineBot::Messages::FetchLineClient.client
   end
 
   def reply(event, line_user_id)
