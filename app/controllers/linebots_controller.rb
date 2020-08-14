@@ -34,7 +34,7 @@ class LinebotsController < ApplicationController
       if User.find_by(line_user_id: line_user_id)
         client.reply_message(event['replyToken'], message(event, line_user_id))
       else
-        link_url = LineBot::Messages::LinkToken.fetch_link_token(client, line_user_id)
+        link_url = LineBot::Messages::LinkToken.fetch_link_token(line_user_id)
         client.reply_message(event['replyToken'], link_url)
       end
     when 'accountLink'

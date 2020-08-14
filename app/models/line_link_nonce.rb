@@ -2,6 +2,7 @@ class LineLinkNonce < ApplicationRecord
   belongs_to :user, dependent: :destroy
 
   def self.generate_link_url(link_user_id)
+    client = LineBot::Messages::FetchLineClient.client
     line_link_token = JSON.load(client.create_link_token(line_user_id).body)
 
     {
