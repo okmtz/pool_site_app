@@ -13,11 +13,6 @@ class User < ApplicationRecord
   def self.save_line_user_id(nonce, line_user_id)
     link_user = LineLinkNonce.find_by(nonce: nonce).user
     link_user.line_user_id = line_user_id
-    begin
-      link_user.save!
-      return true
-    rescue ActiveRecord::RecordInvalid => e
-      return false
-    end
+    link_user.save
   end
 end

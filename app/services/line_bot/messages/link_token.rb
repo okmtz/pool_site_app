@@ -1,7 +1,8 @@
 module LineBot
   module Messages
     class LinkToken
-      def self.fetch_link_token(client, line_user_id)
+      def self.fetch_link_token(line_user_id)
+        client = LineBot::Messages::FetchLineClient.client
         line_link_token = JSON.load(client.create_link_token(line_user_id).body)
     
         {
@@ -13,7 +14,7 @@ module LineBot
               "actions": [{
                   "type": "uri",
                   "label": "Account Link",
-                  "uri": "https://9082c23ace3b.ngrok.io/linebots/line_link_login?linkToken=#{line_link_token['linkToken']}"
+                  "uri": "https://94f7e2f14e9e.ngrok.io/linebots/line_link_login?linkToken=#{line_link_token['linkToken']}"
               }]
           }
         }
