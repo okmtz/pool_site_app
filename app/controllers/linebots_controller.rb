@@ -39,7 +39,7 @@ class LinebotsController < ApplicationController
       end
     when 'accountLink'
       message = LineBot::Messages::LinkAccount.save_line_user_id(event)
-      client.push_message("#{link_user.line_user_id}", message)
+      client.push_message("#{line_user_id}", message)
     end
   end
 
