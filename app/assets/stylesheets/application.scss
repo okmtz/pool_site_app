@@ -13,6 +13,144 @@
  *= require_tree .
  *= require_self
  */
+
+.m_t_10 {
+    margin-top: 10px;
+}
+
+.m_t_20 {
+    margin-top: 20px;
+}
+
+.m_t_25 {
+    margin-top: 25px;
+}
+
+.m_t_30 {
+    margin-top: 30px;
+}
+
+.m_l_10 {
+    margin-left: 10px;
+}
+
+body {
+    margin: 0 0;
+}
+
+header {
+    color:#f6f4e6;
+    background-color: #41444b;
+    width: 100vw;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+
+    h1 {
+        margin:0;
+    } 
+}
+
+.contents {
+    background-color: #f6f4e6;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.login {
+    max-width: 600px;
+	margin: 0 auto;
+	padding: 250px 0;
+	height: 400px;
+    text-align: center;
+    
+	h1{
+        font-size: 40px;
+		transition-duration: 1s;
+		transition-timing-function: ease-in-put;
+        font-weight: 200;
+    }
+    
+    form{
+        padding: 20px 0;
+        position: relative;
+        z-index: 2;
+        
+        input{
+            display: block;
+            appearance: none;
+            outline: 0;
+            border: 1px solid #41444b;
+            background-color: #52575d;
+            width: 300px;
+            
+            border-radius: 3px;
+            padding: 10px 15px;
+            margin: 0 auto 10px auto;
+            display: block;
+            text-align: center;
+            font-size: 18px;
+            
+            color: #fddb3a;
+            
+            transition-duration: 0.25s;
+            font-weight: 300;
+            
+            &:hover {
+                background-color: black;
+            }
+
+            &:focus {
+                background-color: black;
+            }
+        }
+
+        input::placeholder {
+            color: #f6f4e6;
+        }
+        
+        button{
+            appearance: none;
+            outline: 0;
+            background-color: #41444b;
+            border: 0;
+            padding: 10px 15px;
+            border-radius: 3px;
+            width: 250px;
+            cursor: pointer;
+            font-size: 18px;
+            transition-duration: 0.25s;
+            color: #fddb3a;
+            
+            &:hover{
+                background-color: #41444b;
+            }
+        }
+    }
+}
+
+.login_help {
+    display: column;
+    flex-direction: row;
+    a {
+        margin: auto;
+        width: auto;
+    }
+}
+
+.main {
+    margin-left: 2vw;
+}
+
+.second_layer_menu {
+    background-color: #fddb3a;
+    width: 15vw;
+}
+
 .article_favicon {
     width: 20px;
 }
