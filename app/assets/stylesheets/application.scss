@@ -36,6 +36,8 @@
 
 body {
     margin: 0 0;
+    font-size: medium;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 header {
@@ -61,7 +63,7 @@ header {
     width: 100vw;
 }
 
-.login {
+.register, .login {
     max-width: 600px;
 	margin: 0 auto;
 	padding: 250px 0;
@@ -133,7 +135,7 @@ header {
     }
 }
 
-.login_help {
+.register_help, .login_help {
     display: column;
     flex-direction: row;
     a {
