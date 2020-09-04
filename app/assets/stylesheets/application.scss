@@ -63,7 +63,7 @@ header {
     width: 100vw;
 }
 
-.register, .login {
+.reset_password, .register, .login {
     max-width: 600px;
 	margin: 0 auto;
 	padding: 250px 0;
@@ -74,7 +74,6 @@ header {
         font-size: 40px;
 		transition-duration: 1s;
 		transition-timing-function: ease-in-put;
-        font-weight: 200;
     }
     
     form{
@@ -135,7 +134,7 @@ header {
     }
 }
 
-.register_help, .login_help {
+.reset_password_help, .register_help, .login_help {
     display: column;
     flex-direction: row;
     a {
