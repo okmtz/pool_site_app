@@ -280,7 +280,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
-  devise
+  devise (>= 4.7.2)
   doorkeeper
   dotenv-rails
   jbuilder (~> 2.7)
