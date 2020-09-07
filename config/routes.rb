@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Route Map
 #
 #                                Prefix Verb   URI Pattern                                                                              Controller#Action
@@ -61,18 +63,17 @@
 #                  rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
 
 Rails.application.routes.draw do
-  
-  devise_for :users, :controllers => {
-    :passwords => 'users/passwords',
-    :registrations => 'users/registrations',
-    :sessions => 'users/sessions'   
-  } 
-  
+  devise_for :users, controllers: {
+    passwords: 'users/passwords',
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
+
   devise_scope :user do
-    get "user/:id", :to => "users/registrations#detail"
-    get "signup", :to => "users/registrations#new"
-    get "login", :to => "users/sessions#new"
-    get "logout", :to => "users/sessions#destroy"
+    get 'user/:id', to: 'users/registrations#detail'
+    get 'signup', to: 'users/registrations#new'
+    get 'login', to: 'users/sessions#new'
+    get 'logout', to: 'users/sessions#destroy'
   end
   root to: 'articles#index'
   resources :articles

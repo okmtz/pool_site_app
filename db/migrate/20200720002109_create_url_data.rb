@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateUrlData < ActiveRecord::Migration[6.0]
   def change
     create_table :url_data do |t|

@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class LinebotsController < ApplicationController
   # frozen_string_literal: true
-  protect_from_forgery :except => [:create, :line_link_login]
+  protect_from_forgery except: %i[create line_link_login]
   before_action :validate_signature, only: [:create]
 
   def create
@@ -39,7 +41,7 @@ class LinebotsController < ApplicationController
       end
     when 'accountLink'
       message = LineBot::Messages::LinkAccount.save_line_user_id(event)
-      client.push_message("#{line_user_id}", message)
+      client.push_message(line_user_id.to_s, message)
     end
   end
 

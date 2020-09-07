@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 class UrlContent < ApplicationRecord
   belongs_to :article
 
   class << self
-
     def create(article)
       article_content = fetch_url_data(article)
       url_content = url_content_params(article_content, article.id)
@@ -25,14 +26,14 @@ class UrlContent < ApplicationRecord
     end
 
     def url_content_params(article_content, article_id)
-      title = article_content.title ? article_content.title : ''
+      title = article_content.title || ''
       # faviconがimageタグで表示できない
-      favicon = article_content.favicon ? article_content.favicon : ''
-      description = article_content.description ? article_content.description : ''
-      image = article_content.images.first ? article_content.images.first.src.to_s : '' 
-      data = {title: title, favicon: favicon, description: description, image: image, article_id: article_id}
+      favicon = article_content.favicon || ''
+      description = article_content.description || ''
+      image = article_content.images.first ? article_content.images.first.src.to_s : ''
+      data = { title: title, favicon: favicon, description: description, image: image, article_id: article_id }
 
-      return data
+      data
     end
   end
 end

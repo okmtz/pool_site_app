@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -5,7 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one :line_link_nonce, dependent: :destroy
   def admin?
-    return true if self.id == 1
+    return true if id == 1
 
     false
   end
