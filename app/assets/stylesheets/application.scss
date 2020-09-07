@@ -18,6 +18,10 @@
     margin-top: 10px;
 }
 
+.m_t_15 {
+    margin-top: 15px;
+}
+
 .m_t_20 {
     margin-top: 20px;
 }
@@ -32,6 +36,18 @@
 
 .m_l_10 {
     margin-left: 10px;
+}
+
+.m_b_10 {
+    margin-bottom: 10px;
+}
+
+.f_bold_600 {
+    font-weight: 600;
+}
+
+.f_size_20 {
+    font-size: 20px;
 }
 
 body {
@@ -56,10 +72,10 @@ header {
 .contents {
     background-color: #f6f4e6;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-left: 0;
     margin-right: 0;
-    height: 100vh;
+    height: auto;
     width: 100vw;
 }
 
@@ -150,11 +166,30 @@ header {
 .second_layer_menu {
     background-color: #fddb3a;
     width: 15vw;
+    height: auto;
 }
 
-.article_favicon {
-    width: 20px;
-}
-.article_image {
-    width: 200px;
+.article {
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px #52575d;
+    &:hover {
+        background-color: whitesmoke;
+    }
+
+    .title {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .description {
+        width: 40vw;
+        height: auto;
+    }
+
+    .image {
+        width: 25vw;
+    }
 }
