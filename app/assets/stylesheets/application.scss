@@ -70,12 +70,12 @@ header {
 }
 
 .contents {
-    background-color: #f6f4e6;
+    background-color: #fddb3a;
     display: flex;
     flex-direction: row;
     margin-left: 0;
     margin-right: 0;
-    height: auto;
+    height: 100vh;
     width: 100vw;
 }
 
@@ -160,23 +160,27 @@ header {
 }
 
 .main {
-    margin-left: 2vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
 }
 
-.second_layer_menu {
-    background-color: #fddb3a;
-    width: 15vw;
-    height: auto;
+.article_wrap {
+    margin: 0 auto;
+    width: 30vw;
+    height: 41vh;
 }
 
 .article {
+    height: 35vh;
     padding: 10px;
-    background-color: white;
+    background-color: whitesmoke;
     display: flex;
     flex-direction: column;
     border: solid 1px #52575d;
     &:hover {
-        background-color: whitesmoke;
+        background-color: #f6f4e6;
     }
 
     .title {
@@ -185,11 +189,14 @@ header {
     }
 
     .description {
-        width: 40vw;
-        height: auto;
+        width: 25vw;
+        height: 9vh;
     }
 
     .image {
-        width: 25vw;
+        width: 20vw;
+        height: 18vh;
+        max-height: 23vh;
+        margin: auto;
     }
 }

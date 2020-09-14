@@ -1,23 +1,20 @@
-<div class="second_layer_menu"><%= render :partial => "layouts/second_layer_menu" %></div>
 <div class="main">
   <% @articles.each do |article| %>
     <% article.url_contents.each do |url_content| %>
-      <div class="url m_t_10 m_b_10"><%= link_to article.url.to_str, article.url.to_str, target: "_blank" %></div>
-      <div class="article">
-        <div class="title m_t_15">
-          <span><%= image_tag url_content.favicon, size: "25" %></span>
-          <span class="m_l_10 f_size_20 f_bold_600"><%= url_content.title %></span>
-        </div>
-        <div class="description m_t_10"><td><%= url_content.description %></div>
-        <%= image_tag  "#{url_content.image}", class: "image m_t_20" %>
-      <% end %>
-      <td><%= article.check %></td>
-      <td><%= article.comment %></td>
-      <td><%= link_to 'Show', article %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <div class="article_wrap">
+        <div class="url m_t_10 m_b_10"><%= link_to article.url.to_str, article.url.to_str, target: "_blank" %></div>
+        <div class="article">
+          <div class="title m_t_15">
+            <span><%= image_tag url_content.favicon, size: "25" %></span>
+            <span class="m_l_10 f_size_20 f_bold_600"><%= url_content.title %></span>
+          </div>
+          <div class="description m_t_10"><td><%= url_content.description %></div>
+          <%= image_tag  "#{url_content.image}", class: "image m_t_20" %>
+        <% end %>
+        <td><%= article.check %></td>
+        <td><%= article.comment %></td>
+      </div>
     </div>
   <% end %>
 
-  <%= link_to 'New Article', new_article_path %>
 </div>
