@@ -3,10 +3,12 @@
     <% article.url_contents.each do |url_content| %>
     <div class="article_wrap">
         <div class="url m_t_10 m_b_10"><%= link_to article.url.to_str, article.url.to_str, target: "_blank" %></div>
-        <%= link_to  image_tag('garbage.svg', class: 'garbage'), delete_article_path(id: article.id) %>
+        <%= link_to image_tag('garbage.svg', class: 'garbage'), delete_article_path(id: article.id) %>
         <div class="article">
           <div class="title m_t_15">
-            <span><%= image_tag url_content.favicon, size: "25" %></span>
+            <% if url_content.favicon.to_s.start_with?('http')%>
+              <span><%= image_tag url_content.favicon, size: "25" %></span>
+            <% end %>
             <span class="m_l_10 f_size_20 f_bold_600"><%= url_content.title %></span>
           </div>
           <div class="description m_t_10"><td><%= url_content.description %></div>
