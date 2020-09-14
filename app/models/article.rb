@@ -3,6 +3,7 @@
 class Article < ApplicationRecord
   has_many :url_contents, dependent: :destroy
   scope :user, ->(user) { where(user_id: user) }
+  enum active: { active: 0, disable: 1 }
 
   class << self
     def create_with_url_content(article_params)
@@ -22,5 +23,9 @@ class Article < ApplicationRecord
         UrlContent.update(article)
       end
     end
+  end
+
+  def delete
+    disable!
   end
 end

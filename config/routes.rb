@@ -76,7 +76,10 @@ Rails.application.routes.draw do
     get 'logout', to: 'users/sessions#destroy'
   end
   root to: 'articles#index'
-  resources :articles
+  resources :articles do
+    get 'delete', on: :member
+  end
+
   resources :users
   resources :linebots, only: [:create] do
     get 'line_link_login', on: :collection

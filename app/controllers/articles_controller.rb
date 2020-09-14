@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.user(current_user).order(created_at: 'DESC')
+    @articles = Article.user(current_user).active.order(created_at: 'DESC')
   end
 
   # GET /articles/1
@@ -38,8 +38,9 @@ class ArticlesController < ApplicationController
 
   # DELETE /articles/1
   # DELETE /articles/1.json
-  def destroy
-    @article.destroy
+  def delete
+    @article = Article.find(params[:id])
+    @article.delete
     respond_to do |format|
       format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
       format.json { head :no_content }
@@ -55,6 +56,6 @@ class ArticlesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def article_params
-    params.require(:article).permit(:url, :check, :comment, :user_id)
+    params.require(:article).permit(:url, :user_id)
   end
 end
