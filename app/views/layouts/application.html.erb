@@ -10,7 +10,12 @@
   </head>
 
   <body>
-    <header><h1 class="m_l_10">Pool Site App</h1></header>
+    <header>
+      <h1 class="m_l_10">Pool Site App</h1>
+      <% if user_signed_in? %>
+        <%= link_to image_tag('create.svg', class: 'create_img'), new_article_path %>
+      <% end %>
+    </header>
     <div class="contents">
       <%= yield %>
     </div>
