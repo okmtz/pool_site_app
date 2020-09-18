@@ -11,10 +11,14 @@
 
   <body>
     <header>
-      <h1 class="m_l_10">Pool Site App</h1>
-      <% if user_signed_in? %>
-        <%= link_to image_tag('create.svg', class: 'create_img'), new_article_path %>
-      <% end %>
+      <div class="container">
+        <nav class="navbar">
+          <%= link_to "Pool Site App", root_path, class:"navbar_brand title" %>
+          <% if user_signed_in? %>
+            <%= link_to image_tag('create.svg', class: 'create_img'), new_article_path, class:"navbar-text" %>
+          <% end %>
+        </nav>
+      </div>
     </header>
     <div class="contents">
       <%= yield %>

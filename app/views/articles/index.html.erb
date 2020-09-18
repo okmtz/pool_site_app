@@ -1,21 +1,25 @@
-<div class="main">
+<div class="container">
+<div class="main row">
   <% @articles.each do |article| %>
     <% article.url_contents.each do |url_content| %>
-    <div class="article_wrap">
-        <div class="url m_t_10 m_b_10"><%= link_to article.url.to_str, article.url.to_str, target: "_blank" %></div>
+      <div class="article_wrap col-sm-6 col-md-4 m-auto">
         <%= link_to image_tag('garbage.svg', class: 'garbage_img'), delete_article_path(id: article.id) %>
-        <div class="article">
-          <div class="title m_t_15">
-            <% if url_content.favicon.to_s.start_with?('http')%>
-              <span><%= image_tag url_content.favicon, size: "25" %></span>
-            <% end %>
-            <span class="m_l_10 f_size_20 f_bold_600"><%= url_content.title %></span>
+        <%= link_to(article.url, target: "_blank") do %>
+          <div class="article card mh-20 mb-4">
+            <div class="card-body">
+              <div class="card-title title">
+                <% if url_content.favicon.to_s.start_with?('http')%>
+                  <span><%= image_tag url_content.favicon, size: "25" %></span>
+                <% end %>
+                <span class="m_l_10 f_size_20 f_bold_600 title_text"><%= url_content.title %></span>
+              </div>
+              <div class="card-text description m_t_10"><td><%= url_content.description %></div>
+            </div>
+            <%= image_tag  "#{url_content.image}", class: "bd-placeholder-img card-image-bottom image mb-2" %>
           </div>
-          <div class="description m_t_10"><td><%= url_content.description %></div>
-          <%= image_tag  "#{url_content.image}", class: "image m_t_20" %>
         <% end %>
       </div>
-    </div>
+    <% end %>
   <% end %>
-
+</div>
 </div>
