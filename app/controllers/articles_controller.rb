@@ -10,17 +10,10 @@ class ArticlesController < ApplicationController
     @articles = Article.user(current_user).active.order(created_at: 'DESC')
   end
 
-  # GET /articles/1
-  # GET /articles/1.json
-  def show; end
-
   # GET /articles/new
   def new
     @article = Article.new
   end
-
-  # GET /articles/1/edit
-  def edit; end
 
   # POST /articles
   # POST /articles.json
@@ -29,15 +22,6 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
-  # PATCH/PUT /articles/1
-  # PATCH/PUT /articles/1.json
-  def update
-    Article.update_with_url_content(article_params, @article)
-    redirect_to articles_path
-  end
-
-  # DELETE /articles/1
-  # DELETE /articles/1.json
   def delete
     @article = Article.find(params[:id])
     @article.delete
