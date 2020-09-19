@@ -211,3 +211,52 @@ header {
         margin: auto;
     }
 }
+
+.article_form {
+    max-width: 600px;
+	margin: 0 auto;
+	padding: 150px 0;
+	height: 400px;
+    text-align: center;
+    
+	h1{
+        font-size: 40px;
+		transition-duration: 1s;
+		transition-timing-function: ease-in-put;
+    }
+    
+    form{
+        padding: 20px 0;
+        position: relative;
+        z-index: 2;
+        
+        input{
+            display: block;
+            appearance: none;
+            outline: 0;
+            border: 1px solid #41444b;
+            background-color: #52575d;
+            width: 400px;
+            
+            border-radius: 3px;
+            padding: 10px 15px;
+            margin: 0 auto 10px auto;
+            display: block;
+            text-align: center;
+            font-size: 18px;
+            
+            color: #fddb3a;
+            
+            transition-duration: 0.25s;
+            font-weight: 300;
+            
+            &:hover {
+                background-color: black;
+            }
+
+            &:focus {
+                background-color: black;
+            }
+        }
+    }
+}
