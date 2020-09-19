@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.user(current_user).active.order(created_at: 'DESC')
+    @articles = Article.user(current_user).includes(:url_contents).active.order(created_at: 'DESC')
   end
 
   # GET /articles/new
