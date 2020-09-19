@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -15,7 +16,8 @@
         <nav class="navbar">
           <%= link_to "Pool Site App", root_path, class:"navbar_brand title" %>
           <% if user_signed_in? %>
-            <%= link_to image_tag('create.svg', class: 'create_img'), new_article_path, class:"navbar-text" %>
+            <%= link_to image_tag('create.svg', class: 'create_img'), new_article_path, remote: true, class:"navbar-text" %>
+            <div id="article-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
           <% end %>
         </nav>
       </div>
