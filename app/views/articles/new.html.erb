@@ -1,5 +1,28 @@
-<h1>New Article</h1>
+<div class="article_form">
+  <h1>New</h1>
+  <%= form_with(model: @article, local: true) do |form| %>
+    <% if @article.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@article.errors.count, "error") %> prohibited this @article from being saved:</h2>
 
-<%= render 'form', article: @article %>
+        <ul>
+          <% @article.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-<%= link_to 'Back', articles_path %>
+    <div class="field">
+      <%= form.hidden_field :user_id, value: current_user.id  %>
+    </div>
+
+    <div class="field">
+      <%= form.text_field :url, placeholder: "URL" %>
+    </div>
+
+    <div class="actions m_t_30">
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>
