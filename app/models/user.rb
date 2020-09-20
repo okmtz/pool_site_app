@@ -6,6 +6,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one :line_link_nonce, dependent: :destroy
+  has_many :user_line_ids, dependent: :destroy
+
   def admin?
     return true if id == 1
 
@@ -14,7 +16,6 @@ class User < ApplicationRecord
 
   def self.save_line_user_id(nonce, line_user_id)
     link_user = LineLinkNonce.find_by(nonce: nonce).user
-    link_user.line_user_id = line_user_id
-    link_user.save
+    UserLineId.create(line_user_id: line_user_id, user_id: link_user.id)
   end
 end

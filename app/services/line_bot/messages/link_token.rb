@@ -16,7 +16,7 @@ module LineBot
             "actions": [{
               "type": 'uri',
               "label": 'Account Link',
-              "uri": "https://94f7e2f14e9e.ngrok.io/linebots/line_link_login?linkToken=#{line_link_token['linkToken']}"
+              "uri": "https://345a12d8a786.ngrok.io/linebots/line_link_login?linkToken=#{line_link_token['linkToken']}"
             }]
           }
         }
