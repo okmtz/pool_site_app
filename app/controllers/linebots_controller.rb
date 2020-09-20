@@ -33,7 +33,7 @@ class LinebotsController < ApplicationController
 
     case event['type']
     when 'message'
-      if User.find_by(line_user_id: line_user_id)
+      if UserLineId.find_by(line_user_id: line_user_id)
         client.reply_message(event['replyToken'], message(event, line_user_id))
       else
         link_url = LineBot::Messages::LinkToken.fetch_link_token(line_user_id)

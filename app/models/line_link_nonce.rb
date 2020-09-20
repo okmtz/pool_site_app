@@ -16,7 +16,7 @@ class LineLinkNonce < ApplicationRecord
         "actions": [{
           "type": 'uri',
           "label": 'Account Link',
-          "uri": "https://9082c23ace3b.ngrok.io/linebots/line_link_login?linkToken=#{line_link_token['linkToken']}"
+          "uri": "https://345a12d8a786.ngrok.io /linebots/line_link_login?linkToken=#{line_link_token['linkToken']}"
         }]
       }
     }

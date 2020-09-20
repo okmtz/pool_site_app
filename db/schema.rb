@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_09_064341) do
+ActiveRecord::Schema.define(version: 2020_09_19_105447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,14 @@ ActiveRecord::Schema.define(version: 2020_08_09_064341) do
     t.index ["article_id"], name: "index_url_contents_on_article_id"
   end
 
+  create_table "user_line_ids", force: :cascade do |t|
+    t.string "line_user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_user_line_ids_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -106,4 +114,5 @@ ActiveRecord::Schema.define(version: 2020_08_09_064341) do
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"
   add_foreign_key "oauth_access_tokens", "users", column: "resource_owner_id"
   add_foreign_key "url_contents", "articles"
+  add_foreign_key "user_line_ids", "users"
 end
