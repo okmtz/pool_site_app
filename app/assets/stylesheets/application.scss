@@ -83,11 +83,20 @@ header {
     h1 {
         margin:0;
     } 
+    
+    .nav_img_link {
+    }
 
     .create_img {
+        margin-right: 1vw;
         width: 5vh;
         height: 5vh;
-        fill: white;
+    }
+
+    .logout_img {
+        margin-right: 1vw;
+        width: 4vh;
+        height: 4vh;
     }
 }
 
