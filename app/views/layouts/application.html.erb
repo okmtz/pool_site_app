@@ -16,7 +16,10 @@
         <nav class="navbar">
           <%= link_to "Pool Site App", root_path, class:"navbar_brand title" %>
           <% if user_signed_in? %>
-            <%= link_to image_tag('create.svg', class: 'create_img'), new_article_path, remote: true, class:"navbar-text" %>
+            <div class="nav_img_link">
+              <%= link_to image_tag('create.svg', class: 'create_img'), new_article_path, remote: true %>
+              <%= link_to image_tag('logout.svg', class: 'logout_img'), logout_path, remote: false %>
+            </div>
             <div id="article-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
           <% end %>
         </nav>
