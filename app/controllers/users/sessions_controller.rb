@@ -17,6 +17,12 @@ module Users
     def create
       login_user = User.find_by(email: params[:user][:email])
       line_link_token = params[:user][:line_link_token]
+
+     if login_user.nil?
+      redirect_to new_user_registration_path
+      return
+     end
+
       if line_link_token.blank?
         super
         return
