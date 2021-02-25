@@ -17,10 +17,9 @@ module Users
     def create
       login_user = User.find_by(email: params[:user][:email])
       line_link_token = params[:user][:line_link_token]
-      if line_link_token.blank?
-        super
-        return
-      end
+
+      return redirect_to new_user_registration_path if login_user.nil?
+      return super if line_link_token.blank?
       nonce = SecureRandom.base64(10)
       LineLinkNonce.create(user_id: login_user.id, nonce: nonce)
       redirect_to "https://access.line.me/dialog/bot/accountLink?linkToken=#{line_link_token}&nonce=#{nonce}"
