@@ -1,0 +1,2 @@
+current directory: /pool_site_app/vendor/cache/ruby/2.7.0/gems/mimemagic-0.3.9/ext/mimemagic
+/usr/local/bin/ruby -I/usr/local/lib/ruby/2.7.0/rubygems -rrubygems /pool_site_app/vendor/cache/ruby/2.7.0/gems/rake-13.0.3/exe/rake RUBYARCHDIR\=/pool_site_app/vendor/cache/ruby/2.7.0/extensions/x86_64-linux/2.7.0/mimemagic-0.3.9 RUBYLIBDIR\=/pool_site_app/vendor/cache/ruby/2.7.0/extensions/x86_64-linux/2.7.0/mimemagic-0.3.9

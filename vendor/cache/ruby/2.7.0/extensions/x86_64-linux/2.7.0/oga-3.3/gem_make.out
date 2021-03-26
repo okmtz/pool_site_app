@@ -1,0 +1,16 @@
+current directory: /pool_site_app/vendor/cache/ruby/2.7.0/gems/oga-3.3/ext/c
+/usr/local/bin/ruby -I /usr/local/lib/ruby/2.7.0 -r ./siteconf20210326-834-1vp8l9y.rb extconf.rb
+creating Makefile
+
+current directory: /pool_site_app/vendor/cache/ruby/2.7.0/gems/oga-3.3/ext/c
+make "DESTDIR=" clean
+
+current directory: /pool_site_app/vendor/cache/ruby/2.7.0/gems/oga-3.3/ext/c
+make "DESTDIR="
+compiling lexer.c
+compiling liboga.c
+linking shared-object liboga.so
+
+current directory: /pool_site_app/vendor/cache/ruby/2.7.0/gems/oga-3.3/ext/c
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 liboga.so ./.gem.20210326-834-odozg7

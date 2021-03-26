@@ -1,0 +1,16 @@
+current directory: /pool_site_app/vendor/cache/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+/usr/local/bin/ruby -I /usr/local/lib/ruby/2.7.0 -r ./siteconf20210326-834-ggjjy1.rb extconf.rb
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /pool_site_app/vendor/cache/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR=" clean
+
+current directory: /pool_site_app/vendor/cache/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR="
+compiling cparse.c
+linking shared-object racc/cparse.so
+
+current directory: /pool_site_app/vendor/cache/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cparse.so ./.gem.20210326-834-18848gw/racc
