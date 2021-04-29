@@ -36,3 +36,6 @@ yarn-debug.log*
 .yarn-integrity
 .env
 .vscode/settings.json
+
+/vendor/cache
+secret.yaml
